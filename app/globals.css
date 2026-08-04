@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f8f9f6; color: #141514; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+::selection { background: #c8f247; color: #141514; }
+.card { @apply rounded-[20px] border border-line bg-white shadow-card; }
+.eyebrow { @apply text-[10px] font-bold uppercase tracking-[0.2em] text-muted; }
+.page-title { @apply text-4xl font-medium tracking-[-0.05em] sm:text-5xl; }
+.pill { @apply inline-flex items-center rounded-full border border-line bg-white px-3 py-1 text-xs font-medium; }

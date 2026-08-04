@@ -1,0 +1,2 @@
+import { Header } from "@/components/ui";import { ArticleAnalyzer } from "@/components/article-analyzer";
+export default function Page(){return <div className="mx-auto max-w-[1440px] px-5 py-7 sm:px-8 lg:px-10 lg:py-9"><Header eyebrow="Read · Think · Express" title="English Brand Lab" description="Turn global technology reporting into concise insights — while building the language of modern brand strategy." action="Save article"/><div className="mt-8"><ArticleAnalyzer/></div></div>}
