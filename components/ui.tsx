@@ -1,0 +1,8 @@
+import { ArrowUpRight, Plus } from "lucide-react";
+import Link from "next/link";
+
+export function Header({ eyebrow, title, description, action = "Add insight" }: { eyebrow: string; title: string; description: string; action?: string }) {
+  return <header className="flex flex-col gap-7 border-b border-line pb-9 sm:flex-row sm:items-end sm:justify-between"><div><div className="mb-5 flex items-center gap-3"><span className="h-px w-7 bg-ink"/><p className="eyebrow">{eyebrow}</p></div><h1 className="page-title">{title}</h1><p className="mt-4 max-w-2xl text-sm leading-6 text-muted">{description}</p></div><button className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-3 text-xs font-semibold text-white transition hover:-translate-y-0.5"><Plus size={15}/>{action}</button></header>;
+}
+export function SectionTitle({ title, href, label = "View all" }: { title: string; href?: string; label?: string }) { return <div className="mb-4 flex items-center justify-between"><h2 className="text-base font-semibold tracking-tight">{title}</h2>{href && <Link href={href} className="flex items-center gap-1 text-xs font-medium text-muted hover:text-ink">{label}<ArrowUpRight size={14}/></Link>}</div> }
+export function Tag({ children, tone = "neutral" }: { children: React.ReactNode; tone?: "neutral" | "green" | "purple" | "blue" }) { const c={neutral:"bg-canvas text-muted",green:"bg-[#ecf8d2] text-[#4c6720]",purple:"bg-[#f0eafa] text-[#68449a]",blue:"bg-[#e5f2f5] text-[#346673]"}[tone]; return <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide ${c}`}>{children}</span> }

@@ -1,0 +1,5 @@
+import { MoreHorizontal } from "lucide-react";
+
+export function DataTable({ columns, rows }: { columns: string[]; rows: Record<string,string>[] }) {
+  return <div className="overflow-hidden rounded-[20px] border border-line bg-white"><div className="overflow-x-auto"><table className="w-full min-w-[900px] text-left"><thead><tr className="border-b border-line bg-[#fafbf8]">{columns.map(c=><th className="px-5 py-4 text-[9px] font-bold uppercase tracking-[.16em] text-muted" key={c}>{c}</th>)}<th/></tr></thead><tbody>{rows.map((row,i)=><tr className="group border-b border-line last:border-0 hover:bg-[#fafbf8]" key={i}>{columns.map((c,j)=><td className={`max-w-[270px] px-5 py-5 text-xs leading-5 ${j===0?"font-semibold text-ink":"text-muted"}`} key={c}>{j===0&&<span className="mr-3 font-serif text-base italic text-[#b6b8b2]">0{i+1}</span>}{row[c.toLowerCase().replaceAll(" ","_")]}</td>)}<td className="pr-4"><MoreHorizontal size={15} className="text-muted opacity-50 transition group-hover:opacity-100"/></td></tr>)}</tbody></table></div></div>
+}
